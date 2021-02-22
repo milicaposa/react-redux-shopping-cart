@@ -45,6 +45,16 @@ a:hover {
   color: #ff8000;
 }
 
+/* form */
+form {
+  width: 100%;
+}
+
+input {
+  padding: 1rem;
+  border: 0.1rem solid #c0c0c0;
+}
+
 /* Grid Container */
 .grid-container {
   display: grid;
@@ -192,4 +202,17 @@ main {
 .total > div,
 .total > button {
   flex: 1;
+}
+
+/* checkout form */
+.form-container {
+  width: 100%;
+  padding: 0;
+  list-style-type: none;
+}
+
+.form-container li {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
 }
