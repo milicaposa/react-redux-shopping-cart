@@ -14,7 +14,12 @@ function Products(props) {
               </a>
               <div className="product-price">
                 <div>{formatCurrency(product.price)}</div>
-                <button className="btn primary">Add to cart</button>
+                <button
+                  className="button primary"
+                  onClick={() => props.addToCart(product)}
+                >
+                  Add to cart
+                </button>
               </div>
             </div>
           </li>
