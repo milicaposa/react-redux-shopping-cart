@@ -18,10 +18,15 @@ textarea {
   font-size: 1.6rem;
 }
 
+.right {
+  text-align: right;
+}
+
 /* buttons */
 .button {
   padding: 1rem;
   border: 0.1rem #c0c0c0 solid;
+  outline: none;
   background-color: #f0f0f0;
   cursor: pointer;
 }
@@ -138,4 +143,53 @@ main {
 }
 .product-price div {
   font-size: 2rem;
+}
+
+/* Cart */
+.cart {
+  display: flex;
+  padding: 1rem;
+  margin: 1rem;
+}
+
+.cart-header {
+  border-bottom: 0.1rem solid #c0c0c0;
+}
+
+.cart-items {
+  padding: 0;
+  width: 100%;
+  list-style-type: none;
+}
+
+.cart-items img {
+  width: 5rem;
+}
+
+.cart-items li {
+  display: flex;
+}
+
+.cart-items li div {
+  padding: 0.5rem;
+}
+
+.cart-items li div:last-child {
+  flex: 1;
+}
+
+.total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.total > div {
+  font-size: 2rem;
+}
+
+.total > div,
+.total > button {
+  flex: 1;
 }

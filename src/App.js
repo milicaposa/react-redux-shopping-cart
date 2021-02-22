@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Cart from "./components/Cart";
 import Filter from "./components/Filter";
 import Products from "./components/Products";
 import data from "./data.json";
@@ -7,10 +8,31 @@ function App() {
   const [products, setProducts] = useState(data.products);
   const [size, setSize] = useState("");
   const [sort, setSort] = useState("");
+  const [cartItems, setCartItems] = useState([]);
+
+  const removeFromCart = (product) => {
+    const itemsInCart = cartItems.slice();
+    setCartItems(itemsInCart.filter((x) => x._id !== product._id));
+  };
+
+  const addToCart = (product) => {
+    const itemsInCart = cartItems.slice();
+    let alreadyInCart = false;
+
+    itemsInCart.forEach((item) => {
+      if (item._id === product._id) {
+        item.count++;
+        alreadyInCart = true;
+      }
+    });
+    if (!alreadyInCart) {
+      itemsInCart.push({ ...product, count: 1 });
+    }
+    setCartItems(itemsInCart);
+  };
 
   const sortProducts = (event) => {
     const sort = event.target.value;
-    console.log(sort);
     setSort(sort);
     setProducts(
       products
@@ -33,6 +55,7 @@ function App() {
 
   const filterProducts = (event) => {
     const filter = event.target.value;
+
     if (filter === "") {
       setSize(filter);
       setProducts(data.products);
@@ -61,9 +84,11 @@ function App() {
               sortProducts={sortProducts}
               filterProducts={filterProducts}
             />
-            <Products products={products} />
+            <Products products={products} addToCart={addToCart} />
           </div>
-          <div className="sidebar">Cart Items</div>
+          <div className="sidebar">
+            <Cart itemsInCart={cartItems} removeFromCart={removeFromCart} />
+          </div>
         </div>
       </main>
       <footer>All rigthts reserved</footer>
@@ -72,29 +97,3 @@ function App() {
 }
 
 export default App;
-
-// class AppClass extends React.Component {
-//   constructor(props) {
-//     super(props)
-
-//     this.state = {
-//        products: data.products,
-//        size: "",
-//        sort: ""
-//     }
-//   }
-
-//   render() {
-//     return (
-//       <div className="grid-container">
-//         <header>
-//           <a href="/">React Shopping Cart App</a>
-//         </header>
-//         <main>Product List</main>
-//         <footer>All rigthts reserved</footer>
-//       </div>
-//     );
-//   }
-// }
-
-// export default AppClass;
