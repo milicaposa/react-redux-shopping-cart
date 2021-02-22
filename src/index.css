@@ -89,6 +89,18 @@ main {
   flex: 1 20rem;
 }
 
+/* Filter */
+.filter {
+  display: flex;
+  padding: 1rem;
+  margin: 1rem;
+  border-bottom: 0.1rem solid #c0c0c0;
+}
+
+.filter div {
+  flex: 1;
+}
+
 /* Products */
 .products {
   display: flex;
