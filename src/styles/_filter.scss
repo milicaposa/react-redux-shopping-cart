@@ -1,0 +1,11 @@
+/* Filter */
+.filter {
+  display: flex;
+  padding: 1rem;
+  margin: 1rem;
+  @include border-bottom;
+
+  div {
+    flex: 1;
+  }
+}
