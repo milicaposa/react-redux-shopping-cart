@@ -1,0 +1,22 @@
+$primary-color: #91bbb3;
+$primary-deep-color: #3c5857;
+$secondary-color: #397f83;
+
+$white-color: #ffffff;
+$border-color: #729b9a;
+
+$button-bg-color: #e5ebeb;
+
+@mixin border-bottom {
+  border-bottom: 0.1rem solid $secondary-color;
+}
+
+@mixin border {
+  border: 0.1rem solid $secondary-color;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}

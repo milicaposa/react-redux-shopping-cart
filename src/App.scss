@@ -1,0 +1,101 @@
+@import "./styles/imports";
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body,
+#root {
+  height: 100vh;
+  margin: 0;
+  background-color: $white-color;
+}
+
+body,
+input,
+select,
+button,
+textarea {
+  font-family: "Montserrat", "Helvetica", "Arial", "sans-serif";
+  font-size: 1.6rem;
+}
+
+.right {
+  text-align: right;
+}
+
+/* buttons */
+.button {
+  padding: 1rem;
+  @include border;
+  outline: none;
+  background-color: $button-bg-color;
+  color: $secondary-color;
+  cursor: pointer;
+
+  &:hover {
+    border: 0.1rem $primary-deep-color solid;
+    color: $primary-deep-color;
+  }
+
+  &.primary {
+    background-color: $primary-color;
+    color: $white-color;
+
+    &:hover {
+      background-color: $button-bg-color;
+      color: $primary-deep-color;
+    }
+  }
+}
+
+/* links */
+a {
+  color: $primary-color;
+  text-decoration: none;
+
+  &:hover {
+    color: $primary-deep-color;
+  }
+}
+
+/* form */
+form {
+  width: 100%;
+}
+
+input {
+  padding: 1rem;
+  @include border;
+}
+
+/* MAIN */
+main {
+  grid-area: main;
+
+  .content {
+    display: flex;
+    flex-wrap: wrap;
+
+    .main-content {
+      flex: 3 60rem;
+    }
+  }
+
+  .sidebar {
+    flex: 1 20rem;
+  }
+}
+
+/* Grid Container */
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+  grid-template-rows: 5rem 1fr 5rem;
+  grid-template-columns: 1fr;
+  height: 100%;
+}
