@@ -20,3 +20,21 @@ $button-bg-color: #e5ebeb;
   margin: 0;
   padding: 0;
 }
+
+@mixin media-sm {
+  @media screen and (max-width: 485px) {
+    @content;
+  }
+}
+
+@mixin media-md {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin media-lg {
+  @media screen and (max-width: 1024px) {
+    @content;
+  }
+}

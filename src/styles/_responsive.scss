@@ -1,0 +1,23 @@
+@include media-lg {
+  .product-details {
+    img {
+      max-width: 40rem;
+    }
+  }
+}
+
+@include media-md {
+  .product-details {
+    img {
+      max-width: 35rem;
+    }
+  }
+}
+
+@include media-md {
+  .product-details {
+    img {
+      max-width: 30rem;
+    }
+  }
+}
